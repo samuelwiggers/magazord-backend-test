@@ -3,7 +3,8 @@
     "description": "Teste Magazord sistema de contatos utilizando MVC e ORM Doctrine",
     "type": "project",
     "require": {
-        "doctrine/orm": "^3.7"
+        "doctrine/orm": "^3.7",
+        "symfony/cache": "^7.4"
     },
     "autoload": {
         "psr-4": {
