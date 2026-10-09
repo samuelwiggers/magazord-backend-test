@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS pessoas(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(250) NOT NULL,
+    cpf VARCHAR(11) NOT NULL UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS contatos(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tipo TINYINT(1) NOT NULL,
+    descricao VARCHAR(255) NOT NULL,
+    idPessoa INT NOT NULL,
+
+    CONSTRAINT fk_contatos_pessoas
+        FOREIGN KEY (idPessoa)
+        REFERENCES pessoas(id)
+        ON DELETE CASCADE
+);
