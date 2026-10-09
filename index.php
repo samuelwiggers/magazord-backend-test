@@ -17,6 +17,8 @@ $router->get('/', function () {
 
 $router->get('/pessoas', [$pessoaController, 'index']);
 
+$router->get('/pessoas/show', [$pessoaController, 'show']);
+
 $router->get('/pessoas/create', [$pessoaController, 'create']); 
 $router->post('/pessoas/create', [$pessoaController, 'create']); 
 
@@ -26,6 +28,8 @@ $router->post('/pessoas/edit', [$pessoaController, 'edit']);
 $router->post('/pessoas/delete', [$pessoaController, 'delete']);
 
 $router->get('/contatos', [$contatoController, 'index']);
+
+$router->get('/contatos/show', [$contatoController, 'show']);
 
 $router->get('/contatos/create', [$contatoController, 'create']);
 $router->post('/contatos/create', [$contatoController, 'create']);

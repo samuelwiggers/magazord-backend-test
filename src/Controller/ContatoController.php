@@ -18,6 +18,22 @@ class ContatoController {
         require __DIR__ . '/../View/contato/index.php';
     }
 
+    public function show() {
+        $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+
+        $contato = $id
+            ? $this->entityManager->getRepository(Contato::class)->find($id)
+            : null;
+
+        if (!$contato) {
+            http_response_code(404);
+            echo 'Contato não encontrado.';
+            return;
+        }
+
+        require __DIR__ . '/../View/contato/show.php';
+    }
+
     public function create() {
         $pessoas = $this->entityManager
             ->getRepository(Pessoa::class)
