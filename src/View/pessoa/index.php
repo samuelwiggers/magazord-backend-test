@@ -69,6 +69,11 @@
                                             <i class="fa-solid fa-trash"></i>
                                             Excluir
                                         </button>
+
+                                        <a href="/pessoas/show?id=<?= $pessoa->getId() ?>" class="btn">
+                                            <i class="fa-solid fa-eye"></i>
+                                            Visualizar
+                                        </a>
                                     </form>
                                 </div>
                             </td>

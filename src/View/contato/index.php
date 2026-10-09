@@ -61,6 +61,11 @@
                                         Excluir
                                     </button>
                                 </form>
+
+                                <a href="/contatos/show?id=<?= $contato->getId() ?>" class="btn">
+                                    <i class="fa-solid fa-eye"></i>
+                                    Visualizar
+                                </a>
                             </div>
                         </td>
                     </tr>

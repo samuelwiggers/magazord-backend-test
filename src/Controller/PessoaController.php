@@ -24,6 +24,22 @@ class PessoaController {
         require __DIR__ . '/../View/pessoa/index.php';
     }
 
+    public function show() {
+        $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+
+        $pessoa = $id
+            ? $this->entityManager->getRepository(Pessoa::class)->find($id)
+            : null;
+
+        if (!$pessoa) {
+            http_response_code(404);
+            echo 'Pessoa não encontrada.';
+            return;
+        }
+
+        require __DIR__ . '/../View/pessoa/show.php';
+    }
+
     public function create() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $dados = Validator::pessoa(
