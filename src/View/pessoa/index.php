@@ -78,7 +78,8 @@
         </table>
 
         <br>
-
+        
+        <a href="/contatos" class="btn">Ver contatos</a>
         <a href="/" class="btn">Início</a>
     </div>
 </body>

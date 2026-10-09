@@ -11,6 +11,13 @@
     <div class="container">
         <h1>Cadastrar contato</h1>
 
+        <?php if (!empty($erro)): ?>
+            <div class="alert-error">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <?= $erro ?>
+            </div>
+        <?php endif; ?>
+
         <form method="POST" action="/contatos/create">
             <label for="idPessoa">Pessoa:</label>
             <select id="idPessoa" name="idPessoa" required>
