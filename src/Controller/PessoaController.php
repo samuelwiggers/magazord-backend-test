@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\Pessoa;
+use App\Service\Validator;
 use Doctrine\ORM\EntityManager;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 
@@ -25,7 +26,10 @@ class PessoaController {
 
     public function create() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $dados = $this->validarPessoa();
+            $dados = Validator::pessoa(
+                $_POST['nome'] ?? '',
+                $_POST['cpf'] ?? ''
+            );
 
             if (isset($dados['erro'])) {
                 $erro = $dados['erro'];
@@ -69,7 +73,10 @@ class PessoaController {
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $dados = $this->validarPessoa();
+            $dados = Validator::pessoa(
+                $_POST['nome'] ?? '',
+                $_POST['cpf'] ?? ''
+            );
 
             if (isset($dados['erro'])) {
                 $erro = $dados['erro'];
@@ -115,23 +122,5 @@ class PessoaController {
 
         header('Location: /pessoas');
         exit;
-    }
-
-    private function validarPessoa() {
-        $nome = trim($_POST['nome'] ?? '');
-        $cpf = preg_replace('/\D/', '', $_POST['cpf'] ?? '');
-
-        if ($nome === '') {
-            return ['erro' => 'O nome é obrigatório.'];
-        }
-
-        if (strlen($cpf) !== 11) {
-            return ['erro' => 'O CPF deve conter 11 dígitos.'];
-        }
-
-        return [
-            'nome' => $nome,
-            'cpf' => $cpf
-        ];
     }
 }

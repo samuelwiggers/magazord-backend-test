@@ -17,7 +17,6 @@
 
         <div class="actions">
             <a href="/contatos/create" class="btn">Cadastrar Contato</a>
-            <a href="/pessoas" class="btn">Ver pessoas</a>
         </div>
 
         <table border="1" cellpadding="8">
@@ -71,6 +70,7 @@
 
         <br>
 
+        <a href="/pessoas" class="btn">Ver pessoas</a>
         <a href="/" class="btn btn-secondary">Início</a>
     </div>
 </body>
