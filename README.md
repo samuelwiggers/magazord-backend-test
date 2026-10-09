@@ -25,7 +25,7 @@ docker compose up --build -d
 
 Após a inicialização, acesse:
 
-**http://localhost:8080**
+**http://localhost:8080** ou **http://127.0.0.1:8080**
 
 O banco de dados será criado automaticamente na primeira execução por meio do arquivo `database/init.sql`.
 
