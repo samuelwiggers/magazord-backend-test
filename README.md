@@ -4,15 +4,6 @@ Projeto desenvolvido para o teste técnico de Back-end da Magazord.
 
 A aplicação permite cadastrar, listar, editar e excluir pessoas e seus contatos, além de realizar buscas de pessoas pelo nome.
 
-## Tecnologias utilizadas
-
-- PHP 8.3
-- MySQL 8.0
-- Doctrine ORM
-- HTML, CSS e JavaScript
-- Docker
-- PHPUnit
-
 O projeto foi desenvolvido utilizando o padrão MVC, sem frameworks PHP.
 
 ## Como executar
