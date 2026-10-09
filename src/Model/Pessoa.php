@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Pessoa {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column()]
+    #[ORM\Column]
     private ?int $id = null;
 
     #[ORM\Column(length: 250)]
@@ -18,15 +18,15 @@ class Pessoa {
     #[ORM\Column(length: 11, unique: true)]
     private string $cpf;
 
-    public function getId(): ?int {
+    public function getId() {
         return $this->id;
     }
 
-    public function getNome(): ?string {
+    public function getNome() {
         return $this->nome;
     }
 
-    public function getCpf(): ?string {
+    public function getCpf() {
         return $this->cpf;
     }
 
