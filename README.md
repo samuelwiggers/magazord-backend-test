@@ -8,7 +8,7 @@ O projeto foi desenvolvido utilizando o padrão MVC, sem frameworks PHP.
 
 ## Como executar
 
-É necessário ter o Docker instalado.
+É necessário ter o Docker instalado e em execução na máquina, com suporte ao Docker Compose..
 
 Clone o repositório e acesse a pasta do projeto:
 
