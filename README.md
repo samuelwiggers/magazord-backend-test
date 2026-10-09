@@ -38,3 +38,11 @@ Para executar:
 ```bash
 docker compose exec app ./vendor/bin/phpunit
 ```
+
+## Para teste local (opcional)
+
+Para disponibilizar as dependências do Composer no ambiente local e permitir que a IDE reconheça as classes utilizadas, execute após iniciar os containers:
+
+```bash
+docker compose cp app:/var/www/html/vendor ./vendor
+```
